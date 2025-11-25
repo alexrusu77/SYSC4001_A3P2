@@ -12,7 +12,8 @@ The simulation prints which TA marks which question and which TA modifies the ru
 ---
 
 ## Files
-- `grading_sim_<student1>_<101314298>.cpp` – main program  
+- `partB_<student1>_<101314298>.cpp` – main program
+- `partA_<student1>_<101314298>.cpp` – (reference code, no concurrency)
 - `rubric.txt` – rubric file (5 lines)  
 - `exams/` – folder containing exam files named `exam_0001.txt`, `exam_0002.txt`, etc. Each exam file should start with the student number on the first line, followed by the exam content.
 
