@@ -69,4 +69,18 @@ To test the program:
 
 ---
 
+## Design Discussion
+
+Our TA grading simulation uses shared memory to allow multiple TA processes to access the same exam and rubric data. The program is designed to satisfy the classical three requirements of the critical section problem:
+
+1. **Mutual Exclusion**  
+   Access to shared data such as `exam_questions_marked`, `exam_loaded`, `student_number`, and the `exam` text is protected using a semaphore (`mutex`). Only one TA process can modify these critical pieces of data at a time, preventing race conditions.
+
+2. **Progress**  
+   If no TA is currently modifying the shared data, and a TA wants to mark a question or load the next exam, it is guaranteed to proceed after acquiring the semaphore. The semaphore ensures that waiting processes will eventually enter the critical section in the order they attempt to access it.
+
+3. **Bounded Waiting**  
+   Each TA can mark only one question per iteration, and the shared semaphore ensures that every TA gets a chance to enter the critical section. The random sleep intervals and repeated checking of unmarked questions make starvation unlikely. Therefore, each TA will eventually mark all questions for every exam.
+
+The design uses **shared memory** to store the exam data and a **mutex semaphore** to control access. A **print_lock semaphore** ensures proper console output without overlapping access from multiple TAs.
 
