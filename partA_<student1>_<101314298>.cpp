@@ -98,8 +98,8 @@ void ta_process(int id, SharedData *data)
             int modify = rand() % 5 == 0; // 20% chance
             if (modify) 
             {
-                printf("TA %d modifying rubric line %d\n", id, i + 1);
-                data->rubric[i][3] = data->rubric[i][3] + 1; // Shift ASCII
+                int pos = rand() % strlen(data->rubric[i]);
+                data->rubric[i][pos] = data->rubric[i][pos] + 1; // Shift ASCII
                 save_rubric(data);
             }
         }
