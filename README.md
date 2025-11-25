@@ -39,13 +39,16 @@ For example, to simulate 4 TAs:
 
 The output shows three types of events:
 
-1. Which TA modifies which rubric line
+1. Which TA modifies which rubric line:
+   
 ```TA 2 modified rubric line 1```
 
-2. Which TA marks which question for which student
+3. Which TA marks which question for which student:
+   
 ```TA 3 marked Question 2 for Student 1```
 
-3. Which TA loads the next exam:
+5. Which TA loads the next exam:
+   
 ```TA 1 loaded next exam (student 2)```
 
 All TAs mark question concurrently, but each question is only marked once per student. The shared memory and semaphores ensure safe concurrent access.
