@@ -12,7 +12,7 @@ The simulation prints which TA marks which question and which TA modifies the ru
 ---
 
 ## Files
-- `partB-2.c` – main program  
+- `partB.cpp` – main program  
 - `rubric.txt` – rubric file (5 lines)  
 - `exams/` – folder containing exam files named `exam_0001.txt`, `exam_0002.txt`, etc. Each exam file should start with the student number on the first line, followed by the exam content.
 
