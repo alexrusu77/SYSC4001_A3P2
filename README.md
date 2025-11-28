@@ -20,7 +20,7 @@ The simulation prints which TA marks which question and which TA modifies the ru
 ---
 
 ## Compilation
-```g++ -o ta_sim partB.cpp -lpthread```
+```g++ -o ta_sim "partB_<student1>_<101314298>.cpp" -lpthread```
 
 ---
 
